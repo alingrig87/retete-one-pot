@@ -11,13 +11,23 @@ const searchInput = document.getElementById("searchInput");
 // Open modal when clicking on recipe card
 recipeCards.forEach((card) => {
   card.addEventListener("click", () => {
-    const recipeNumber = parseInt(card.getAttribute("data-recipe"));
-    const recipeTitle = card.querySelector("h3").textContent;
-    const recipeData = recipesData[recipeNumber];
+    const recipeTitle = card.querySelector("h3").textContent.trim();
+
+    // Caută rețeta după titlu în loc de număr
+    let recipeData = null;
+    for (const key in recipesData) {
+      if (recipesData[key].title.trim() === recipeTitle) {
+        recipeData = recipesData[key];
+        break;
+      }
+    }
 
     if (recipeData) {
-      // Obține informații nutriționale
-      const nutrition = getNutrition(recipeNumber);
+      // Obține informații nutriționale (folosește primul număr găsit)
+      const recipeNumber = Object.keys(recipesData).find(
+        (key) => recipesData[key].title.trim() === recipeTitle,
+      );
+      const nutrition = getNutrition(parseInt(recipeNumber));
 
       // Afișează rețeta completă
       modalBody.innerHTML = `
