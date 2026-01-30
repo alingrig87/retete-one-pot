@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rețete Tefal One Pot - Carte de Rețete</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🍳 Carte de Rețete Tefal One Pot</h1>
+        <p class="subtitle">
+          45 de Rețete Delicioase pentru Oala Multifuncțională
+        </p>
+      </header>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="toate">Toate</button>
+        <button class="filter-btn" data-category="supe">Supe & Ciorbe</button>
+        <button class="filter-btn" data-category="carne">
+          Mâncăruri cu Carne
+        </button>
+        <button class="filter-btn" data-category="peste">
+          Pește & Fructe de Mare
+        </button>
+        <button class="filter-btn" data-category="deserturi">Deserturi</button>
+        <button class="filter-btn" data-category="altele">
+          Alte Preparate
+        </button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Caută o rețetă..." />
+      </div>
+
+      <div class="recipes-grid" id="recipesGrid">
+        <!-- Supe & Ciorbe -->
+        <div class="recipe-card" data-category="supe" data-recipe="1">
+          <div class="recipe-number">1</div>
+          <h3>Supă cremă de roșii</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~20 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            O supă cremoasă și reconfortantă, perfectă pentru zilele mai reci.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="3">
+          <div class="recipe-number">3</div>
+          <h3>Supă cremă de praz și cartofi</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 8 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Supă delicată cu arome fine de praz și cartofi.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="4">
+          <div class="recipe-number">4</div>
+          <h3>Supă cremă de dovleac</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~15 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Supă aromată de dovleac, ideală pentru toamnă.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="9">
+          <div class="recipe-number">9</div>
+          <h3>Ciorbă de văcuță</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ciorbă tradițională românească, cu carne de vită.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="10">
+          <div class="recipe-number">10</div>
+          <h3>Ciorbă de burtă</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 40 min</span>
+            <span class="servings">👥 8 porții</span>
+          </div>
+          <p class="recipe-description">
+            Celebra ciorbă de burtă românească, gătită ușor în oala sub
+            presiune.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="11">
+          <div class="recipe-number">11</div>
+          <h3>Supă de găină</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 25 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Supă clasică de găină cu legume și fidea.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="23">
+          <div class="recipe-number">23</div>
+          <h3>Supă gulaș</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~35 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Supă consistentă tip gulaș, cu carne și legume.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="24">
+          <div class="recipe-number">24</div>
+          <h3>Supă de pui</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">Supă ușoară și sănătoasă de pui.</p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="25">
+          <div class="recipe-number">25</div>
+          <h3>Ciorbă de cartofi</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ciorbă simplă și gustoasă cu cartofi.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="supe" data-recipe="27">
+          <div class="recipe-number">27</div>
+          <h3>Ciorbă de varză cu cârnați</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ciorbă tradițională de varză cu cârnați afumați.
+          </p>
+        </div>
+
+        <!-- Mâncăruri cu Carne -->
+        <div class="recipe-card" data-category="carne" data-recipe="2">
+          <div class="recipe-number">2</div>
+          <h3>Ratatouille</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 15 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Preparat tradițional francez cu legume asortate.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="5">
+          <div class="recipe-number">5</div>
+          <h3>File de porc cu ciuperci</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 32 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            File de porc fragezit cu ciuperci aromate.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="6">
+          <div class="recipe-number">6</div>
+          <h3>Friptură de pulpe de pui</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 15 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Pulpe de pui glazurate cu sos barbecue și chili.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="7">
+          <div class="recipe-number">7</div>
+          <h3>Sos bolognese de carne de vită</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 10 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Sos italian clasic pentru paste, cu carne tocată.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="8">
+          <div class="recipe-number">8</div>
+          <h3>Chili con Carne</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Preparat mexican picant cu carne și fasole.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="12">
+          <div class="recipe-number">12</div>
+          <h3>Piftie</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 55 min</span>
+            <span class="servings">👥 8 porții</span>
+          </div>
+          <p class="recipe-description">
+            Preparatul tradițional românesc din carne de porc gelificată.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="13">
+          <div class="recipe-number">13</div>
+          <h3>Gulaș de vită</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 25 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Gulaș aromat cu carne de vită și paprika.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="14">
+          <div class="recipe-number">14</div>
+          <h3>Vită stroganoff</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Preparat rusesc clasic cu vită și smântână.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="15">
+          <div class="recipe-number">15</div>
+          <h3>Fasole cu ciolan afumat</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~50 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Mâncare tradițională cu fasole și ciolan afumat.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="16">
+          <div class="recipe-number">16</div>
+          <h3>Sarmale</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~60 min</span>
+            <span class="servings">👥 8 porții</span>
+          </div>
+          <p class="recipe-description">
+            Sarmale tradiționale românești în foi de varză.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="17">
+          <div class="recipe-number">17</div>
+          <h3>Varză călită cu afumătură</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 30 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Varză călită tradițională cu afumătură.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="18">
+          <div class="recipe-number">18</div>
+          <h3>Ciulama de pui și ciuperci</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Ciulama cremoasă de pui cu ciuperci.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="19">
+          <div class="recipe-number">19</div>
+          <h3>Papricaș de pui</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Papricaș tradițional cu pui și smântână.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="22">
+          <div class="recipe-number">22</div>
+          <h3>Limbă cu măsline</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">Limbă de vită gătită cu măsline.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="28">
+          <div class="recipe-number">28</div>
+          <h3>Pui cu paprika</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Pui aromat cu paprika și legume.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="29">
+          <div class="recipe-number">29</div>
+          <h3>Gulaș Segedin</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~40 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">Gulaș unguresc cu varză murată.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="30">
+          <div class="recipe-number">30</div>
+          <h3>Porc cu morcovi</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Porc fragezit cu morcovi glasați.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="31">
+          <div class="recipe-number">31</div>
+          <h3>Vită în sos de mărar</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~35 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Vită fragedă în sos aromat de mărar.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="32">
+          <div class="recipe-number">32</div>
+          <h3>Gulaș de vită</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~40 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">Gulaș tradițional cu carne de vită.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="33">
+          <div class="recipe-number">33</div>
+          <h3>Tocăniță de vițel</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~35 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Tocăniță aromată de vițel cu legume.</p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="34">
+          <div class="recipe-number">34</div>
+          <h3>Fabada asturiana</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~50 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Preparat spaniol tradițional cu fasole și carne de porc.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="carne" data-recipe="40">
+          <div class="recipe-number">40</div>
+          <h3>Pulpe de miel înăbușite</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Pulpe de miel fragede înăbușite la foc mic.
+          </p>
+        </div>
+
+        <!-- Pește & Fructe de Mare -->
+        <div class="recipe-card" data-category="peste" data-recipe="35">
+          <div class="recipe-number">35</div>
+          <h3>Midii a la marinera</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~15 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Midii gătite în stil marinăresc spaniol.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="peste" data-recipe="36">
+          <div class="recipe-number">36</div>
+          <h3>Cod cu scoici</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~20 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Cod delicat cu scoici în sos aromat.</p>
+        </div>
+
+        <div class="recipe-card" data-category="peste" data-recipe="37">
+          <div class="recipe-number">37</div>
+          <h3>Sepie cu cartofi</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Sepie fragedă cu cartofi în sos de roșii.
+          </p>
+        </div>
+
+        <!-- Deserturi -->
+        <div class="recipe-card" data-category="deserturi" data-recipe="20">
+          <div class="recipe-number">20</div>
+          <h3>Orez cu lapte</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~20 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Desert tradițional românesc cu orez și lapte.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="deserturi" data-recipe="21">
+          <div class="recipe-number">21</div>
+          <h3>Dulceață de piersici</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 30 min</span>
+            <span class="servings">👥 4 borcane</span>
+          </div>
+          <p class="recipe-description">
+            Dulceață de piersici făcută rapid în oală.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="deserturi" data-recipe="38">
+          <div class="recipe-number">38</div>
+          <h3>Budincă de ciocolată fără făină</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 8 porții</span>
+          </div>
+          <p class="recipe-description">
+            Budincă delicioasă de ciocolată, fără gluten.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="deserturi" data-recipe="39">
+          <div class="recipe-number">39</div>
+          <h3>Cheesecake</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~35 min</span>
+            <span class="servings">👥 8 porții</span>
+          </div>
+          <p class="recipe-description">
+            Cheesecake cremos gătit în oala sub presiune.
+          </p>
+        </div>
+
+        <!-- Alte Preparate -->
+        <div class="recipe-card" data-category="altele" data-recipe="41">
+          <div class="recipe-number">41</div>
+          <h3>Risotto de ciuperci</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~20 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Risotto cremos cu ciuperci aromate.</p>
+        </div>
+
+        <div class="recipe-card" data-category="altele" data-recipe="42">
+          <div class="recipe-number">42</div>
+          <h3>Risotto de dovleac</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~20 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Risotto delicat cu dovleac și parmezan.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="altele" data-recipe="43">
+          <div class="recipe-number">43</div>
+          <h3>Budincă de ovăz cu ananas și mentă</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~15 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">Mic dejun sănătos cu ovăz și fructe.</p>
+        </div>
+
+        <div class="recipe-card" data-category="altele" data-recipe="44">
+          <div class="recipe-number">44</div>
+          <h3>Budincă de ovăz</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~15 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Budincă clasică de ovăz pentru micul dejun.
+          </p>
+        </div>
+
+        <div class="recipe-card" data-category="altele" data-recipe="45">
+          <div class="recipe-number">45</div>
+          <h3>Humus</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">Humus cremos făcut din năut la oală.</p>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          Carte de rețete pentru Oala Multifuncțională Tefal One Pot CY505E30
+        </p>
+        <p class="note">📖 Total: 45 de rețete delicioase</p>
+      </footer>
+    </div>
+
+    <!-- Modal pentru detalii rețete -->
+    <div id="recipeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="recipes-data.js"></script>
+    <script src="nutrition-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
