@@ -13,10 +13,13 @@ recipeCards.forEach((card) => {
   card.addEventListener("click", () => {
     const recipeTitle = card.querySelector("h3").textContent.trim();
 
-    // Caută rețeta după titlu în loc de număr
+    // Caută rețeta după titlu în loc de număr (case-insensitive)
     let recipeData = null;
     for (const key in recipesData) {
-      if (recipesData[key].title.trim() === recipeTitle) {
+      if (
+        recipesData[key].title.trim().toLowerCase() ===
+        recipeTitle.toLowerCase()
+      ) {
         recipeData = recipesData[key];
         break;
       }
@@ -25,7 +28,9 @@ recipeCards.forEach((card) => {
     if (recipeData) {
       // Obține informații nutriționale (folosește primul număr găsit)
       const recipeNumber = Object.keys(recipesData).find(
-        (key) => recipesData[key].title.trim() === recipeTitle,
+        (key) =>
+          recipesData[key].title.trim().toLowerCase() ===
+          recipeTitle.toLowerCase(),
       );
       const nutrition = getNutrition(parseInt(recipeNumber));
 
