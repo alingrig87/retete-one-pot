@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rețetele mele - Tefal One Pot</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <h1>🍳 Rețete Tefal One Pot</h1>
+        <p class="subtitle">Cartea de rețete și rețete video</p>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">📖 Carte Rețete</a>
+          <a href="video-recipes.html" class="nav-link">🎬 Rețete Video</a>
+          <a href="retetele-mele.html" class="nav-link active"
+            >❤️ Rețetele mele</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="filter-buttons" style="display: none"></div>
+      <div class="search-box" style="display: none"></div>
+
+      <div class="recipes-grid" id="recipesGrid">
+        <div class="recipe-card" data-recipe="1">
+          <div class="recipe-number">1</div>
+          <h3>Tocăniță cu carne și legume</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ 60 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Tocăniță One Pot cu carne, legume, roșii și passata. Călit la
+            Rumenire, apoi gătit la Tocană/Supă 40 minute.
+          </p>
+        </div>
+      </div>
+
+      <footer class="recipe-footer">
+        <p class="note">❤️ Rețete create de tine</p>
+      </footer>
+    </div>
+
+    <div id="recipeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="retetele-mele-data.js"></script>
+    <script src="retetele-mele.js"></script>
+  </body>
+</html>
