@@ -26,14 +26,18 @@ filterButtons.forEach((button) => {
 // Căutare rețete
 const searchBox = document.getElementById("searchBox");
 
+function fărăDiacritice(str) {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
 searchBox.addEventListener("input", (e) => {
-  const searchTerm = e.target.value.toLowerCase();
+  const searchTerm = fărăDiacritice(e.target.value);
 
   videoCards.forEach((card) => {
-    const title = card.querySelector("h3").textContent.toLowerCase();
-    const description = card
-      .querySelector(".recipe-description")
-      .textContent.toLowerCase();
+    const title = fărăDiacritice(card.querySelector("h3").textContent);
+    const description = fărăDiacritice(
+      card.querySelector(".recipe-description").textContent,
+    );
 
     if (title.includes(searchTerm) || description.includes(searchTerm)) {
       card.style.display = "block";

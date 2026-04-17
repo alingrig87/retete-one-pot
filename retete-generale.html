@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rețete Generale - Carte de Rețete</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <nav class="main-nav">
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle">🥘 Rețete One Pot ▾</button>
+            <div class="nav-dropdown-menu">
+              <a href="index.html" class="nav-dropdown-item">📖 Carte Rețete</a>
+              <a href="video-recipes.html" class="nav-dropdown-item">🎬 Rețete Video</a>
+              <a href="retetele-mele.html" class="nav-dropdown-item">❤️ Rețetele mele</a>
+            </div>
+          </div>
+          <a href="retete-generale.html" class="nav-link active">🍽️ Rețete Generale</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="toate">Toate</button>
+        <button class="filter-btn" data-category="supe">Supe & Ciorbe</button>
+        <button class="filter-btn" data-category="carne">Mâncăruri cu Carne</button>
+        <button class="filter-btn" data-category="vegetariene">Vegetariene</button>
+        <button class="filter-btn" data-category="deserturi">Deserturi</button>
+        <button class="filter-btn" data-category="altele">Alte Preparate</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Caută o rețetă..." />
+      </div>
+
+      <div class="section-heading section-heading--general">
+        <span class="section-badge section-badge--general">🍽️ Generale</span>
+        <h2>Rețete Generale</h2>
+        <p>Rețete care nu necesită aparate speciale — gătit clasic, acasă</p>
+      </div>
+
+      <div class="recipes-grid" id="recipesGrid">
+
+        <!-- Supe & Ciorbe -->
+        <div class="recipe-card recipe-card--general" data-category="supe">
+          <div class="general-badge">🍽️</div>
+          <h3>Ciorbă de perișoare</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~60 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ciorbă tradițională cu perișoare din carne tocată, legume și smântână.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="supe">
+          <div class="general-badge">🍽️</div>
+          <h3>Ciorbă de fasole boabe</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~90 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ciorbă consistentă de fasole boabe cu ciolan afumat și zarzavat.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="supe">
+          <div class="general-badge">🍽️</div>
+          <h3>Borș de pui</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~50 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Borș acrit natural cu pui, leuștean și smântână.
+          </p>
+        </div>
+
+        <!-- Mâncăruri cu Carne -->
+        <div class="recipe-card recipe-card--general" data-category="carne">
+          <div class="general-badge">🍽️</div>
+          <h3>Mici</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Mici tradiționali românești din amestec de carne, cu condimente specifice.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="carne">
+          <div class="general-badge">🍽️</div>
+          <h3>Chifteluțe</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~40 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Chifteluțe pufoase din carne de porc și vită, prăjite.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="carne">
+          <div class="general-badge">🍽️</div>
+          <h3>Schnitzel de porc</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~25 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Schnitzel clasic pané cu pesmet și ou, prăjit auriu.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="carne">
+          <div class="general-badge">🍽️</div>
+          <h3>Tocăniță de porc cu cartofi</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~50 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Tocăniță consistentă cu carne de porc, cartofi și sos de roșii.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="carne">
+          <div class="general-badge">🍽️</div>
+          <h3>Pilaf cu pui</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Pilaf aromat cu pulpe de pui și legume, gătit la tigaie.
+          </p>
+        </div>
+
+        <!-- Vegetariene -->
+        <div class="recipe-card recipe-card--general" data-category="vegetariene">
+          <div class="general-badge">🍽️</div>
+          <h3>Salată de vinete</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Salată de vinete coapte la flacără cu ceapă și maioneză.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="vegetariene">
+          <div class="general-badge">🍽️</div>
+          <h3>Mâncare de fasole verde</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~35 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Fasole verde cu sos de roșii, usturoi și pătrunjel.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="vegetariene">
+          <div class="general-badge">🍽️</div>
+          <h3>Zacuscă de vinete</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~2 h</span>
+            <span class="servings">👥 8 borcane</span>
+          </div>
+          <p class="recipe-description">
+            Zacuscă tradițională de vinete cu ardei copt și roșii.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="vegetariene">
+          <div class="general-badge">🍽️</div>
+          <h3>Ghiveci de legume</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ghiveci colorat cu legume de sezon și orez.
+          </p>
+        </div>
+
+        <!-- Deserturi -->
+        <div class="recipe-card recipe-card--general" data-category="deserturi">
+          <div class="general-badge">🍽️</div>
+          <h3>Cozonac pufos</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~3 h</span>
+            <span class="servings">👥 12 porții</span>
+          </div>
+          <p class="recipe-description">
+            Cozonac tradițional cu nucă și rahat, pufos și aromat.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="deserturi">
+          <div class="general-badge">🍽️</div>
+          <h3>Tort de ciocolată</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~90 min</span>
+            <span class="servings">👥 10 porții</span>
+          </div>
+          <p class="recipe-description">
+            Tort umed de ciocolată cu cremă de unt și glazură.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="deserturi">
+          <div class="general-badge">🍽️</div>
+          <h3>Papanași prăjiți</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Papanași tradiționali cu brânză de vaci, smântână și dulceață.
+          </p>
+        </div>
+
+        <!-- Alte Preparate -->
+        <div class="recipe-card recipe-card--general recipe-card--featured recipe-card--kids" data-category="altele" id="cardBiscuiti">
+          <div class="general-badge">🍪</div>
+          <div class="featured-tag featured-tag--kids">👶 Rețetă copii</div>
+          <h3>Biscuiți sănătoși pentru copii (Biskids)</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~30 min</span>
+            <span class="servings">👥 2 tăvi (~35 buc)</span>
+          </div>
+          <p class="recipe-description">
+            Biscuiți fără zahăr cu banane sau mere, fulgi de ovăz și unt. Variantă sănătoasă, perfectă pentru cei mici!
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general recipe-card--featured" data-category="altele" id="cardSaratele">
+          <div class="general-badge">🍽️</div>
+          <div class="featured-tag">⭐ Rețetă completă</div>
+          <h3>Săratele cu brânză de vaci și făină integrală</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~45 min</span>
+            <span class="servings">👥 2 tăvi (~50 buc)</span>
+          </div>
+          <p class="recipe-description">
+            Săratele fragede cu 250g făină albă + 250g integrală, unt și brânză Hochland. Rețetă cu selector de tăvi și gramaje automate!
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="altele">
+          <div class="general-badge">🍽️</div>
+          <h3>Mămăligă cu brânză</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~20 min</span>
+            <span class="servings">👥 4 porții</span>
+          </div>
+          <p class="recipe-description">
+            Mămăligă tradițională cu brânză de oaie și smântână.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="altele">
+          <div class="general-badge">🍽️</div>
+          <h3>Salată de boeuf</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~60 min</span>
+            <span class="servings">👥 8 porții</span>
+          </div>
+          <p class="recipe-description">
+            Salată de boeuf clasică cu legume fierte, murături și maioneză.
+          </p>
+        </div>
+
+        <div class="recipe-card recipe-card--general" data-category="altele">
+          <div class="general-badge">🍽️</div>
+          <h3>Ardei umpluți</h3>
+          <div class="recipe-meta">
+            <span class="time">⏱️ ~80 min</span>
+            <span class="servings">👥 6 porții</span>
+          </div>
+          <p class="recipe-description">
+            Ardei umpluți cu amestec de carne tocată și orez în sos de roșii.
+          </p>
+        </div>
+
+      </div>
+
+      <footer class="recipe-footer">
+        <p>Rețete generale pentru gătit acasă</p>
+        <p class="note">🍽️ Rețete fără aparate speciale</p>
+      </footer>
+    </div>
+
+    <!-- Modal Biscuiți copii -->
+    <div id="biscuitiModal" class="modal">
+      <div class="modal-content modal-content--saratele modal-content--kids">
+        <span class="close" id="closeBiscuiti">&times;</span>
+        <div class="saratele-header saratele-header--kids">
+          <div class="saratele-header-top">
+            <h2>🍪 Biscuiți sănătoși pentru copii <span class="biskids-tag">(Biskids)</span></h2>
+            <button class="share-btn share-btn--light" id="shareBiscuiti">🔗 Share</button>
+          </div>
+          <div class="saratele-meta-bar">
+            <span>⏱️ ~30 min total</span>
+            <span>🌡️ 170°C</span>
+            <span>🤖 Robot aluat</span>
+            <span>🚫 Fără zahăr</span>
+          </div>
+        </div>
+
+        <!-- Selector tăvi -->
+        <div class="tavi-selector">
+          <span class="tavi-label">Număr de tăvi:</span>
+          <div class="tavi-buttons">
+            <button class="tavi-btn-b" data-tavi="1">1 tavă</button>
+            <button class="tavi-btn-b active" data-tavi="2">2 tăvi</button>
+            <button class="tavi-btn-b" data-tavi="3">3 tăvi</button>
+            <button class="tavi-btn-b" data-tavi="4">4 tăvi</button>
+          </div>
+          <span class="tavi-info">≈ <span id="bucatiBiscuiti">35</span> biscuiți</span>
+        </div>
+
+        <!-- Selector versiune -->
+        <div class="versiune-selector">
+          <span class="tavi-label">Versiune:</span>
+          <div class="versiune-buttons">
+            <button class="versiune-btn-b active" data-ver="banane">🍌 Cu banane</button>
+            <button class="versiune-btn-b" data-ver="mere">🍎 Cu mere</button>
+            <button class="versiune-btn-b" data-ver="fara-lactoza">🥥 Fără lactoză</button>
+          </div>
+        </div>
+        <div class="versiune-desc" id="versiuneDescB">
+          Rețeta clasică cu banane coapte — cu cât banana e mai coaptă, cu atât biscuiții sunt mai dulci natural.
+        </div>
+
+        <div class="saratele-body">
+          <div class="saratele-section">
+            <h3>🥕 Ingrediente</h3>
+            <ul class="saratele-ingredients">
+              <li>
+                <span class="ing-name">Fulgi de ovăz</span>
+                <span class="ing-per">125g/tavă ×</span>
+                <span class="tavi-multiplier-badge tavi-multiplier-badge--b">2</span>
+                <strong class="ing-total ing-b-grams" data-per-tava="125">= 250g</strong>
+              </li>
+              <li class="ing-row-fruct">
+                <span class="ing-name ing-name-fruct">Banane coapte</span>
+                <span class="ing-per ing-per-fruct">1 banană/tavă ×</span>
+                <span class="tavi-multiplier-badge tavi-multiplier-badge--b">2</span>
+                <strong class="ing-total ing-b-banane">= 2 banane</strong>
+                <em class="ing-note ing-note-fruct">(~100g piure per banană)</em>
+              </li>
+              <li class="ing-row-grasime">
+                <span class="ing-name ing-name-grasime">Unt Président (topit, răcit)</span>
+                <span class="ing-per ing-per-grasime">30g/tavă ×</span>
+                <span class="tavi-multiplier-badge tavi-multiplier-badge--b">2</span>
+                <strong class="ing-total ing-b-grasime" data-per-tava="30">= 60g</strong>
+              </li>
+              <li>
+                <span class="ing-name">Ou</span>
+                <span class="ing-per">1 ou/2 tăvi</span>
+                <strong class="ing-total ing-b-oua">= 1 ou</strong>
+              </li>
+              <li>
+                <span class="ing-name">Scorțișoară</span>
+                <span class="ing-per">½ lngț/tavă ×</span>
+                <span class="tavi-multiplier-badge tavi-multiplier-badge--b">2</span>
+                <strong class="ing-total ing-b-scortisoara">= 1 linguriță</strong>
+              </li>
+              <li>
+                <span class="ing-name">Extract de vanilie</span>
+                <span class="ing-per">¼ lngț/tavă ×</span>
+                <span class="tavi-multiplier-badge tavi-multiplier-badge--b">2</span>
+                <strong class="ing-total ing-b-vanilie">= ½ linguriță</strong>
+              </li>
+              <li>
+                <span class="ing-name">Sare</span>
+                <strong class="ing-total">un praf</strong>
+              </li>
+              <li class="ing-separator"><em>Opțional (adăugate la final):</em></li>
+              <li>
+                <span class="ing-name">Stafide / bucățele ciocolată neagră 70%</span>
+                <strong class="ing-total ing-b-optional">= 50g</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="saratele-section">
+            <h3>👨‍🍳 Mod de preparare (cu robotul)</h3>
+            <ol class="saratele-steps">
+              <li>
+                <span class="step-title">Pregătire ingrediente</span>
+                Preîncălzește cuptorul la <strong>170°C</strong> (convecție) sau <strong>180°C</strong> (fără convecție). Tapetează tăvile cu hârtie de copt. Topește untul Président și lasă-l să se răcească. <span id="bStep1Extra">Zdrobește bananele cu o furculiță într-un bol separat până obții un piure omogen — cu cât sunt mai coapte (cu pete negre), cu atât mai bine.</span>
+              </li>
+              <li>
+                <span class="step-title">Procesează fulgii de ovăz</span>
+                Pune <strong>fulgii de ovăz</strong> în bolul robotului. Folosește <em>paleta (K-beater)</em>. Pornește la <strong>viteză 3–4</strong> timp de <strong>15–20 secunde</strong> — vrei să obții o textură mixtă: parte făină de ovăz, parte fulgi întregi. <em>Nu procesa prea mult</em> — dacă devin complet făină, biscuiții pierd textura caracteristică.
+              </li>
+              <li>
+                <span class="step-title">Adaugă ingredientele umede</span>
+                Adaugă peste fulgii procesați: <strong id="bStep3Fruct">piureul de banane</strong>, <strong>oul</strong> bătut ușor și <strong>untul topit răcit</strong>. Pornește la <strong>viteză 1–2</strong> și amestecă <strong>20–30 secunde</strong> până se omogenizează. Compoziția trebuie să fie lipicioasă și compactă — nu curge, dar nici nu se poate modela ca un aluat uscat.
+              </li>
+              <li>
+                <span class="step-title">Adaugă condimentele și opționalele</span>
+                Adaugă <strong>scorțișoara</strong>, <strong>vanilia</strong> și <strong>praful de sare</strong>. Dacă folosești stafide sau ciocolată, adaugă-le acum. Pornește la viteză minimă, <strong>5–10 secunde</strong>, doar să se distribuie uniform. <em>Nu amesteca prea mult după ce adaugi ciocolata — se sfărâmă.</em>
+              </li>
+              <li>
+                <span class="step-title">Formează biscuiții</span>
+                Cu o lingură sau linguriță de înghețată, ia grămăjoare de compoziție (~1 lingură) și pune-le pe tava cu hârtie de copt. <strong>Aplatizează fiecare cu dosul lingurii umezite</strong> la o grosime de <strong>7–8mm</strong>. Distanță de 2cm între ele — nu cresc în lățime. Modelul rotund, ~4–5cm diametru.
+              </li>
+              <li>
+                <span class="step-title">Coace</span>
+                Introduce tava la <strong>170°C</strong> și coace <strong>12–15 minute</strong> până marginile sunt <strong>aurii</strong> și suprafața e mată (nu mai strălucește umed). <strong>Nu-i lăsa să se rumenească prea tare</strong> — la 170°C fără zahăr nu se ard repede, dar devin amari dacă se supracoc.
+              </li>
+              <li>
+                <span class="step-title">Răcire — obligatorie!</span>
+                Lasă biscuiții <strong>pe tavă 10 minute</strong> — sunt moi la cald și se pot rupe. Mută pe un grătar și lasă să se răcească <strong>complet</strong> înainte să le dai copiilor sau să-i depozitezi. Se întăresc semnificativ la răcire.
+              </li>
+            </ol>
+          </div>
+
+          <div class="saratele-tips">
+            <h4>💡 Sfaturi</h4>
+            <ul>
+              <li><strong>Banana mai coaptă = mai dulce.</strong> Cele cu pete negre pe coajă sunt perfecte — au mai mult zahăr natural.</li>
+              <li id="bTipFruct">Dacă banana e prea mare, folosește 1 și jumătate la primele 2 tăvi — consistența trebuie să fie lipicioasă, nu curgătoare.</li>
+              <li>Biscuiții <strong>nu crocantizează complet</strong> la fel ca cei cu zahăr — textura e mai moale, asemănătoare Biskids.</li>
+              <li>Se păstrează <strong>3–4 zile</strong> la temperatura camerei în cutie închisă, sau <strong>2 săptămâni la congelator</strong>.</li>
+              <li>Poți adăuga <strong>semințe de in / chia</strong> (1 lingură per 2 tăvi) pentru extra nutrienți.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Săratele -->
+    <div id="sarateleModal" class="modal">
+      <div class="modal-content modal-content--saratele">
+        <span class="close" id="closeSaratele">&times;</span>
+        <div class="saratele-header">
+          <div class="saratele-header-top">
+            <h2>🧀 Săratele cu brânză de vaci și făină integrală</h2>
+            <button class="share-btn share-btn--light" id="shareSaratele">🔗 Share</button>
+          </div>
+          <div class="saratele-meta-bar">
+            <span>⏱️ ~45 min total</span>
+            <span>🌡️ 180°C</span>
+            <span>🤖 Robot aluat</span>
+          </div>
+        </div>
+
+        <!-- Selector tăvi -->
+        <div class="tavi-selector">
+          <span class="tavi-label">Număr de tăvi:</span>
+          <div class="tavi-buttons">
+            <button class="tavi-btn" data-tavi="1">1 tavă</button>
+            <button class="tavi-btn active" data-tavi="2">2 tăvi</button>
+            <button class="tavi-btn" data-tavi="3">3 tăvi</button>
+            <button class="tavi-btn" data-tavi="4">4 tăvi</button>
+          </div>
+          <span class="tavi-info">≈ <span id="bucatiCount">50</span> bucăți</span>
+        </div>
+
+        <!-- Selector versiune -->
+        <div class="versiune-selector">
+          <span class="tavi-label">Versiune:</span>
+          <div class="versiune-buttons">
+            <button class="versiune-btn active" data-versiune="clasic">🧈 Clasic</button>
+            <button class="versiune-btn" data-versiune="iaurt">🥛 Cu iaurt grecesc</button>
+            <button class="versiune-btn" data-versiune="sanatos">🌿 Mai sănătos</button>
+            <button class="versiune-btn" data-versiune="extra">💚 Extra sănătos</button>
+          </div>
+        </div>
+        <div class="versiune-desc" id="versiuneDesc">
+          Rețeta originală cu smântână și unt.
+        </div>
+
+        <div class="saratele-body">
+          <div class="saratele-section">
+            <h3>🥕 Ingrediente</h3>
+            <ul class="saratele-ingredients">
+              <!-- Fixe -->
+              <li>
+                <span class="ing-name">Făină albă</span>
+                <span class="ing-per">125g/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-grams" data-per-tava="125">= 250g</strong>
+              </li>
+              <li>
+                <span class="ing-name">Făină integrală</span>
+                <span class="ing-per">125g/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-grams" data-per-tava="125">= 250g</strong>
+              </li>
+              <li>
+                <span class="ing-name">Brânză de vaci Hochland</span>
+                <span class="ing-per">175g/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-grams" data-per-tava="175">= 350g</strong>
+                <em class="ing-note">(1½ pachete × 250g)</em>
+              </li>
+              <li>
+                <span class="ing-name">Ouă</span>
+                <span class="ing-per">1 ou/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-oua" data-per-tava="1">= 2 ouă</strong>
+              </li>
+              <!-- Variabile după versiune -->
+              <li class="ing-row-unt">
+                <span class="ing-name">Unt Président (rece)</span>
+                <span class="ing-per ing-per-unt">75g/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-grams-unt" data-per-tava="75">= 150g</strong>
+              </li>
+              <li class="ing-row-laptat" id="rowSmantana">
+                <span class="ing-name ing-name-laptat">Smântână Napolact 25%</span>
+                <span class="ing-per ing-per-laptat">50g/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-grams-laptat" data-per-tava="50">= 100g</strong>
+              </li>
+              <!-- Fixe finale -->
+              <li>
+                <span class="ing-name">Sare</span>
+                <span class="ing-per">¾ lngț/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-sare">= 1½ linguriță</strong>
+              </li>
+              <li>
+                <span class="ing-name">Praf de copt</span>
+                <span class="ing-per">½ lngț/tavă ×</span>
+                <span class="tavi-multiplier-badge">2</span>
+                <strong class="ing-total ing-praf">= 1 linguriță</strong>
+              </li>
+              <li class="ing-separator"><em>Pentru uns și presărat:</em></li>
+              <li>
+                <span class="ing-name">Ou pentru uns</span>
+                <strong class="ing-total ing-ou-uns">1 ou</strong>
+              </li>
+              <li>
+                <span class="ing-name">Semințe susan / mac</span>
+                <strong class="ing-total">după gust</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="saratele-section">
+            <h3>👨‍🍳 Mod de preparare (cu robotul de aluat)</h3>
+            <ol class="saratele-steps">
+              <li>
+                <span class="step-title">Pregătire ingrediente</span>
+                Scoate <strong>untul Président</strong> din frigider chiar înainte de a începe — trebuie să fie <strong>rece!</strong> Taie-l în cubulețe de ~2cm. Cântărește toate ingredientele înainte. Preîncălzește cuptorul la <strong>180°C</strong> (convecție) sau <strong>190°C</strong> (fără convecție).
+              </li>
+              <li>
+                <span class="step-title">Amestecă ingredientele uscate</span>
+                Pune în bolul robotului <strong>făina albă, făina integrală, praful de copt și sarea</strong>. Folosește <em>paleta (K-beater)</em> — accesoriul pentru aluat scurt, nu cârligul de pâine. Pornește la <strong>viteză 1–2</strong> timp de 10–15 secunde, doar să se amestece uniform.
+              </li>
+              <li>
+                <span class="step-title">Incorporează untul rece</span>
+                Adaugă cubulețele de unt rece direct peste făinuri. Pornește robotul la <strong>viteză 2</strong> și procesează în <em>pulsuri scurte</em> (pornit 3 sec, oprit 3 sec) de <strong>6–8 ori</strong>, până obții o textură <strong>nisipoasă</strong>, ca pesmetul gros. <strong>Nu procesa continuu</strong> — untul nu trebuie să se înmoaie, altfel săratele nu ies fragede!
+              </li>
+              <li>
+                <span class="step-title">Adaugă ingredientele umede</span>
+                Adaugă <strong>brânza de vaci Hochland</strong>, <strong id="step4Laptat">smântâna Napolact 25%</strong> și <strong>ouăle</strong> (bătute ușor). Pornește robotul la <strong>viteză 1</strong> și lasă să lucreze <strong>20–30 secunde</strong> — sau până aluatul se strânge într-o masă compactă și se dezlipește de pereții bolului. Dacă rămâne prea uscat, adaugă 1 linguriță de apă rece și mai pornește 10 secunde.
+              </li>
+              <li>
+                <span class="step-title">Odihnă la frigider — obligatoriu!</span>
+                Oprește robotul imediat ce aluatul s-a format. Scoate-l din bol — <strong>nu frământa!</strong> Modelează-l rapid într-un disc plat, învelește strâns în <strong>folie alimentară</strong> și pune la frigider <strong>minimum 30 minute</strong>. Poți lăsa și peste noapte — cu cât stă mai mult la rece, cu atât e mai ușor de întins.
+              </li>
+              <li>
+                <span class="step-title">Întinde aluatul</span>
+                Scoate discul de aluat din frigider. Lucrează repede — nu lăsa aluatul să se înmoaie. Pe o suprafață <strong>puțin înfăinată</strong>, întinde cu sucitorul la o grosime de <strong>4–5 mm</strong>. Dacă se crăpă la margini — e normal pentru făina integrală! Presează ușor cu mâna să se lipească și continuă. <em>Sfat: poți întinde între două foi de hârtie de copt — fără făină în plus.</em>
+              </li>
+              <li>
+                <span class="step-title">Taie formele</span>
+                Taie cu un cuțit ascuțit, o roată de pizza sau forme de prăjituri în <strong>pătrate sau romburi de ~4×4cm</strong>. Strânge resturile de aluat, întinde din nou și taie. Pune pe <strong>tava tapetată cu hârtie de copt</strong>, cu 1–2cm spațiu între ele (nu cresc mult la copt).
+              </li>
+              <li>
+                <span class="step-title">Unge și presară</span>
+                Bate un ou întreg cu o furculiță și unge fiecare săratele cu o pensulă de silicon. Presară <strong>semințe de susan sau mac</strong> deasupra. Opțional: câteva cristale de sare grunjoasă.
+              </li>
+              <li>
+                <span class="step-title">Coace</span>
+                Introduce tava în cuptorul bine preîncălzit la <strong>180°C</strong>. Coace <strong>15–18 minute</strong> până sunt <strong>aurii la margini și la bază</strong>. Verifică de la 14 minute — fiecare cuptor e diferit! Nu le lăsa să se rumenească prea tare, riscă să devină amare.
+              </li>
+              <li>
+                <span class="step-title">Răcire — ai răbdare!</span>
+                Scoate tava din cuptor și lasă săratele <strong>pe tavă 5–10 minute</strong>. Apoi mută pe un grătar să se răcească complet. <strong>La cald par moi și fărâmicioase — se întăresc la răcire.</strong> Nu le gusta sau depozita înainte să fie complet reci!
+              </li>
+            </ol>
+          </div>
+
+          <div class="saratele-tips">
+            <h4>💡 Sfaturi</h4>
+            <ul>
+              <li><strong>Untul rece</strong> e secretul texturii fragede — dacă se topește în aluat, săratele ies tari.</li>
+              <li><strong>Brânza Hochland</strong> e mai fermă decât brânza proaspătă de casă — nu trebuie scursă.</li>
+              <li><strong>Făina integrală</strong> face aluatul mai sfărâmicios la întins — normal! Lucrează rapid cu mâini reci.</li>
+              <li>Se păstrează <strong>5–7 zile</strong> la temperatura camerei în cutie metalică sau borcan cu capac.</li>
+              <li id="tipLaptat">Smântâna Napolact 25% e perfectă — grăsimea ridicată ajută la textura fragedă. Nu folosi smântână de gătit (sub 20%).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="retete-generale.js"></script>
+    <script src="nav.js"></script>
+  </body>
+</html>

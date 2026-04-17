@@ -9,12 +9,16 @@
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <h1>🍳 Rețete Tefal One Pot</h1>
-        <p class="subtitle">Cartea de rețete și rețete video</p>
         <nav class="main-nav">
-          <a href="index.html" class="nav-link active">📖 Carte Rețete</a>
-          <a href="video-recipes.html" class="nav-link">🎬 Rețete Video</a>
-          <a href="retetele-mele.html" class="nav-link">❤️ Rețetele mele</a>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle active">🥘 Rețete One Pot ▾</button>
+            <div class="nav-dropdown-menu">
+              <a href="index.html" class="nav-dropdown-item active">📖 Carte Rețete</a>
+              <a href="video-recipes.html" class="nav-dropdown-item">🎬 Rețete Video</a>
+              <a href="retetele-mele.html" class="nav-dropdown-item">❤️ Rețetele mele</a>
+            </div>
+          </div>
+          <a href="retete-generale.html" class="nav-link">🍽️ Rețete Generale</a>
         </nav>
       </div>
     </header>
@@ -39,7 +43,13 @@
         <input type="text" id="searchInput" placeholder="Caută o rețetă..." />
       </div>
 
-      <div class="recipes-grid" id="recipesGrid">
+      <div class="section-heading">
+        <span class="section-badge">🥘 One Pot</span>
+        <h2>Rețetele din Cartea Tefal One Pot</h2>
+        <p>45 de rețete testate pentru Oala Multifuncțională CY505E30</p>
+      </div>
+
+      <div class="recipes-list" id="recipesGrid">
         <!-- Supe & Ciorbe -->
         <div class="recipe-card" data-category="supe" data-recipe="1">
           <div class="recipe-number">1</div>
@@ -549,11 +559,11 @@
         </div>
       </div>
 
-      <footer>
+      <footer class="recipe-footer">
         <p>
           Carte de rețete pentru Oala Multifuncțională Tefal One Pot CY505E30
         </p>
-        <p class="note">📖 Total: 45 de rețete delicioase</p>
+        <p class="note">🥘 Total: 45 de rețete One Pot</p>
       </footer>
     </div>
 
@@ -568,5 +578,6 @@
     <script src="recipes-data.js"></script>
     <script src="nutrition-data.js"></script>
     <script src="app.js"></script>
+    <script src="nav.js"></script>
   </body>
 </html>

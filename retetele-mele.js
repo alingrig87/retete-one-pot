@@ -33,12 +33,12 @@ function initReteteleMele() {
       </div>
     `;
     modal.style.display = "block";
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   }
 
   function closeModal() {
     modal.style.display = "none";
-    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "";
   }
 
   recipeCards.forEach((card) => {
