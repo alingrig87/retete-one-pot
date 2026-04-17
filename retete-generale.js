@@ -2,6 +2,17 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const recipeCards = document.querySelectorAll("#recipesGrid .recipe-card");
 const searchInput = document.getElementById("searchInput");
 
+// ===== iOS scroll lock =====
+let _scrollY = 0;
+function lockScroll() {
+  _scrollY = window.scrollY;
+  document.body.style.cssText = `position:fixed;top:-${_scrollY}px;width:100%;overflow-y:scroll;`;
+}
+function unlockScroll() {
+  document.body.style.cssText = "";
+  window.scrollTo(0, _scrollY);
+}
+
 // ===== Filter =====
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -37,28 +48,29 @@ searchInput.addEventListener("input", (e) => {
 // ===== Săratele Modal =====
 const sarateleModal = document.getElementById("sarateleModal");
 const cardSaratele = document.getElementById("cardSaratele");
-const closeSaratele = document.getElementById("closeSaratele");
+const backSaratele = document.getElementById("backSaratele");
 
 function openSarateleModal() {
-  sarateleModal.style.display = "flex";
-  document.documentElement.style.overflow = "hidden";
+  sarateleModal.style.display = "block";
+  sarateleModal.scrollTop = 0;
+  lockScroll();
   history.replaceState(null, "", "#saratele");
 }
 
-function closeModal() {
+function closeSarateleModal() {
   sarateleModal.style.display = "none";
-  document.documentElement.style.overflow = "";
+  unlockScroll();
   history.replaceState(null, "", window.location.pathname);
 }
 
 if (cardSaratele && sarateleModal) {
   cardSaratele.addEventListener("click", openSarateleModal);
-  closeSaratele.addEventListener("click", closeModal);
+  if (backSaratele) backSaratele.addEventListener("click", closeSarateleModal);
   sarateleModal.addEventListener("click", (e) => {
-    if (e.target === sarateleModal) closeModal();
+    if (e.target === sarateleModal) closeSarateleModal();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && sarateleModal.style.display === "flex") closeModal();
+    if (e.key === "Escape" && sarateleModal.style.display === "block") closeSarateleModal();
   });
 }
 
@@ -153,14 +165,12 @@ function fmtOua(n) {
 }
 
 function fmtSare(tavi) {
-  // Base (2 tăvi) = 1.5 linguriță → per tavă = 0.75
   const val = 0.75 * tavi;
   const map = { 0.75: "¾", 1.5: "1½", 2.25: "2¼", 3: "3" };
   return "= " + (map[val] || val.toFixed(2)) + " linguriță";
 }
 
 function fmtPraf(tavi) {
-  // Base (2 tăvi) = 1 linguriță → per tavă = 0.5
   const val = 0.5 * tavi;
   const map = { 0.5: "½", 1: "1", 1.5: "1½", 2: "2" };
   return "= " + (map[val] || val.toFixed(1)) + " linguriță";
@@ -175,42 +185,32 @@ function updateRecipe() {
   const v = VERSIUNI[currentVersiune];
   const t = currentTavi;
 
-  // Bucăți
   document.getElementById("bucatiCount").textContent = t * BUCATI_PER_TAVA;
 
-  // Multiplier badges
   document.querySelectorAll(".tavi-multiplier-badge").forEach((el) => {
     el.textContent = t;
   });
 
-  // Grame fixe per tavă
   document.querySelectorAll(".ing-grams").forEach((el) => {
     const perTava = parseInt(el.getAttribute("data-per-tava"));
     el.textContent = "= " + fmtG(perTava * t);
   });
 
-  // Ouă
   document.querySelectorAll(".ing-oua").forEach((el) => {
     el.textContent = fmtOua(parseInt(el.getAttribute("data-per-tava")) * t);
   });
 
-  // Sare & Praf
   document.querySelector(".ing-sare").textContent = fmtSare(t);
   document.querySelector(".ing-praf").textContent = fmtPraf(t);
-
-  // Ou uns
   document.querySelector(".ing-ou-uns").textContent = fmtOuUns(t);
 
-  // Variabile: unt
   document.querySelector(".ing-per-unt").textContent = v.unt + "g/tavă ×";
   document.querySelector(".ing-grams-unt").textContent = "= " + fmtG(v.unt * t);
 
-  // Variabile: smântână / iaurt
   document.querySelector(".ing-name-laptat").textContent = v.laptNume;
   document.querySelector(".ing-per-laptat").textContent = v.laptGrams + "g/tavă ×";
   document.querySelector(".ing-grams-laptat").textContent = "= " + fmtG(v.laptGrams * t);
 
-  // Note iaurt/smântână
   const noteEl = document.querySelector(".ing-row-laptat .ing-note");
   if (noteEl) noteEl.textContent = v.laptNote;
   else if (v.laptNote) {
@@ -221,25 +221,21 @@ function updateRecipe() {
     strong.after(note);
   }
 
-  // Descriere versiune
   document.getElementById("versiuneDesc").textContent = v.desc;
 
-  // Tip laptat
   const tipEl = document.getElementById("tipLaptat");
   if (tipEl) tipEl.textContent = v.tipLaptat;
 
-  // Pasul 4 text
   const step4El = document.getElementById("step4Laptat");
   if (step4El) step4El.textContent = v.step4Laptat;
 }
 
-// Init
 updateRecipe();
 
 // ===== Biscuiți Modal =====
 const biscuitiModal = document.getElementById("biscuitiModal");
 const cardBiscuiti = document.getElementById("cardBiscuiti");
-const closeBiscuiti = document.getElementById("closeBiscuiti");
+const backBiscuiti = document.getElementById("backBiscuiti");
 
 const VERSIUNI_B = {
   banane: {
@@ -313,37 +309,27 @@ function updateBiscuiti() {
     el.textContent = t;
   });
 
-  // Fulgi ovăz
   document.querySelectorAll(".ing-b-grams").forEach((el) => {
     const perTava = parseInt(el.getAttribute("data-per-tava"));
     el.textContent = "= " + (perTava * t) + "g";
   });
 
-  // Fruct
   document.querySelector(".ing-name-fruct").textContent = v.fructNume;
   document.querySelector(".ing-per-fruct").textContent = v.fructPer;
   document.querySelector(".ing-b-banane").textContent = v.fructTotal(t);
   document.querySelector(".ing-note-fruct").textContent = v.fructNote;
 
-  // Grăsime
   document.querySelector(".ing-name-grasime").textContent = v.grasimeNume;
   document.querySelector(".ing-per-grasime").textContent = v.grasimePer + " ×";
   document.querySelector(".ing-b-grasime").textContent = "= " + (v.grasimePerTava * t) + "g";
 
-  // Ouă
   document.querySelector(".ing-b-oua").textContent = fmtOuaB(t);
-
-  // Scorțișoară & vanilie
   document.querySelector(".ing-b-scortisoara").textContent = fmtScortisoara(t);
   document.querySelector(".ing-b-vanilie").textContent = fmtVanilie(t);
-
-  // Optional
   document.querySelector(".ing-b-optional").textContent = fmtOptional(t);
 
-  // Descriere
   document.getElementById("versiuneDescB").textContent = v.desc;
 
-  // Pași
   const step1Extra = document.getElementById("bStep1Extra");
   if (step1Extra) step1Extra.textContent = v.step1Extra;
   const step3Fruct = document.getElementById("bStep3Fruct");
@@ -373,25 +359,26 @@ document.querySelectorAll(".versiune-btn-b").forEach((btn) => {
 });
 
 function openBiscuitiModal() {
-  biscuitiModal.style.display = "flex";
-  document.documentElement.style.overflow = "hidden";
+  biscuitiModal.style.display = "block";
+  biscuitiModal.scrollTop = 0;
+  lockScroll();
   history.replaceState(null, "", "#biskids");
 }
 
 function closeBiscuitiModal() {
   biscuitiModal.style.display = "none";
-  document.documentElement.style.overflow = "";
+  unlockScroll();
   history.replaceState(null, "", window.location.pathname);
 }
 
 if (cardBiscuiti && biscuitiModal) {
   cardBiscuiti.addEventListener("click", openBiscuitiModal);
-  closeBiscuiti.addEventListener("click", closeBiscuitiModal);
+  if (backBiscuiti) backBiscuiti.addEventListener("click", closeBiscuitiModal);
   biscuitiModal.addEventListener("click", (e) => {
     if (e.target === biscuitiModal) closeBiscuitiModal();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && biscuitiModal.style.display === "flex") closeBiscuitiModal();
+    if (e.key === "Escape" && biscuitiModal.style.display === "block") closeBiscuitiModal();
   });
 }
 
@@ -414,5 +401,4 @@ if (shareBiscuiti) {
 // Auto-open from hash
 if (window.location.hash === "#biskids") openBiscuitiModal();
 
-// Init
 updateBiscuiti();

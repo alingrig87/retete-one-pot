@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rețete Tefal One Pot - Carte de Rețete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -569,8 +572,12 @@
 
     <!-- Modal pentru detalii rețete -->
     <div id="recipeModal" class="modal">
+      <div class="modal-topbar">
+        <button class="modal-back-btn" id="modalBackBtn">← Înapoi</button>
+        <span class="modal-topbar-title" id="modalTopbarTitle"></span>
+        <div class="modal-topbar-actions" id="modalTopbarActions"></div>
+      </div>
       <div class="modal-content">
-        <span class="close">&times;</span>
         <div id="modalBody"></div>
       </div>
     </div>

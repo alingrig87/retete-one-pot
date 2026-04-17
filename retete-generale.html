@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rețete Generale - Carte de Rețete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -302,18 +305,23 @@
 
     <!-- Modal Biscuiți copii -->
     <div id="biscuitiModal" class="modal">
+      <div class="saratele-topbar saratele-topbar--kids">
+        <button class="saratele-back-btn" id="backBiscuiti">← Înapoi</button>
+        <span class="saratele-topbar-title">🍪 Biskids</span>
+        <div class="modal-topbar-actions">
+          <button class="share-btn share-btn--light" id="shareBiscuiti">🔗 Share</button>
+        </div>
+      </div>
       <div class="modal-content modal-content--saratele modal-content--kids">
-        <span class="close" id="closeBiscuiti">&times;</span>
         <div class="saratele-header saratele-header--kids">
-          <div class="saratele-header-top">
+          <div class="saratele-header-content">
             <h2>🍪 Biscuiți sănătoși pentru copii <span class="biskids-tag">(Biskids)</span></h2>
-            <button class="share-btn share-btn--light" id="shareBiscuiti">🔗 Share</button>
-          </div>
-          <div class="saratele-meta-bar">
-            <span>⏱️ ~30 min total</span>
-            <span>🌡️ 170°C</span>
-            <span>🤖 Robot aluat</span>
-            <span>🚫 Fără zahăr</span>
+            <div class="saratele-meta-bar">
+              <span>⏱️ ~30 min total</span>
+              <span>🌡️ 170°C</span>
+              <span>🤖 Robot aluat</span>
+              <span>🚫 Fără zahăr</span>
+            </div>
           </div>
         </div>
 
@@ -444,17 +452,22 @@
 
     <!-- Modal Săratele -->
     <div id="sarateleModal" class="modal">
+      <div class="saratele-topbar">
+        <button class="saratele-back-btn" id="backSaratele">← Înapoi</button>
+        <span class="saratele-topbar-title">🧀 Săratele</span>
+        <div class="modal-topbar-actions">
+          <button class="share-btn share-btn--light" id="shareSaratele">🔗 Share</button>
+        </div>
+      </div>
       <div class="modal-content modal-content--saratele">
-        <span class="close" id="closeSaratele">&times;</span>
         <div class="saratele-header">
-          <div class="saratele-header-top">
+          <div class="saratele-header-content">
             <h2>🧀 Săratele cu brânză de vaci și făină integrală</h2>
-            <button class="share-btn share-btn--light" id="shareSaratele">🔗 Share</button>
-          </div>
-          <div class="saratele-meta-bar">
-            <span>⏱️ ~45 min total</span>
-            <span>🌡️ 180°C</span>
-            <span>🤖 Robot aluat</span>
+            <div class="saratele-meta-bar">
+              <span>⏱️ ~45 min total</span>
+              <span>🌡️ 180°C</span>
+              <span>🤖 Robot aluat</span>
+            </div>
           </div>
         </div>
 

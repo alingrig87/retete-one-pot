@@ -1,17 +1,28 @@
-// Rețetele mele - modal și afișare (același format ca celelalte)
+// Rețetele mele - modal și afișare
 function initReteteleMele() {
   const modal = document.getElementById("recipeModal");
   const modalBody = document.getElementById("modalBody");
-  const closeBtn = document.querySelector(".close");
+  const modalTopbarTitle = document.getElementById("modalTopbarTitle");
+  const modalBackBtn = document.getElementById("modalBackBtn");
   const recipeCards = document.querySelectorAll("#recipesGrid .recipe-card");
 
+  // iOS scroll lock
+  let _scrollY = 0;
+  function lockScroll() {
+    _scrollY = window.scrollY;
+    document.body.style.cssText = `position:fixed;top:-${_scrollY}px;width:100%;overflow-y:scroll;`;
+  }
+  function unlockScroll() {
+    document.body.style.cssText = "";
+    window.scrollTo(0, _scrollY);
+  }
+
   function openRecipe(recipeData) {
+    if (modalTopbarTitle) modalTopbarTitle.textContent = recipeData.title;
+
     modalBody.innerHTML = `
       <div class="recipe-hero">
-        <div class="modal-header-compact">
-          <h2>${recipeData.title}</h2>
-          <button class="print-btn-small" onclick="window.print()">🖨️</button>
-        </div>
+        <h2>${recipeData.title}</h2>
         <div class="recipe-meta-bar">
           <span>⏱️ ${recipeData.time}</span>
           <span>👥 ${recipeData.servings}</span>
@@ -33,12 +44,13 @@ function initReteteleMele() {
       </div>
     `;
     modal.style.display = "block";
-    document.documentElement.style.overflow = "hidden";
+    modal.scrollTop = 0;
+    lockScroll();
   }
 
   function closeModal() {
     modal.style.display = "none";
-    document.documentElement.style.overflow = "";
+    unlockScroll();
   }
 
   recipeCards.forEach((card) => {
@@ -59,12 +71,12 @@ function initReteteleMele() {
     });
   });
 
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modalBackBtn) modalBackBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape" && modal.style.display === "block") closeModal();
   });
 }
 

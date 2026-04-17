@@ -1,12 +1,25 @@
 // Modal functionality
 const modal = document.getElementById("recipeModal");
 const modalBody = document.getElementById("modalBody");
-const closeBtn = document.querySelector(".close");
+const modalTopbarTitle = document.getElementById("modalTopbarTitle");
+const modalTopbarActions = document.getElementById("modalTopbarActions");
+const modalBackBtn = document.getElementById("modalBackBtn");
 
 // Filter and search elements
 const filterButtons = document.querySelectorAll(".filter-btn");
 const recipeCards = document.querySelectorAll("#recipesGrid .recipe-card");
 const searchInput = document.getElementById("searchInput");
+
+// ===== iOS scroll lock =====
+let _scrollY = 0;
+function lockScroll() {
+  _scrollY = window.scrollY;
+  document.body.style.cssText = `position:fixed;top:-${_scrollY}px;width:100%;overflow-y:scroll;`;
+}
+function unlockScroll() {
+  document.body.style.cssText = "";
+  window.scrollTo(0, _scrollY);
+}
 
 // ===== Share helpers =====
 function slugify(str) {
@@ -46,6 +59,13 @@ function openRecipeByCard(card) {
     }
   }
 
+  // Set topbar
+  modalTopbarTitle.textContent = recipeTitle;
+  modalTopbarActions.innerHTML = `
+    <button class="share-btn" id="shareBtn" onclick="copyShareLink('${slug}')">🔗 Share</button>
+    <button class="print-btn-small" onclick="window.print()">🖨️</button>
+  `;
+
   if (recipeData) {
     const recipeNumber = Object.keys(recipesData).find(
       (key) => recipesData[key].title.trim().toLowerCase() === recipeTitle.toLowerCase(),
@@ -54,13 +74,7 @@ function openRecipeByCard(card) {
 
     modalBody.innerHTML = `
       <div class="recipe-hero">
-        <div class="modal-header-compact">
-          <h2>${recipeData.title}</h2>
-          <div class="modal-actions">
-            <button class="share-btn" id="shareBtn" onclick="copyShareLink('${slug}')">🔗 Share</button>
-            <button class="print-btn-small" onclick="window.print()">🖨️</button>
-          </div>
-        </div>
+        <h2>${recipeData.title}</h2>
         <div class="recipe-meta-bar">
           <span>⏱️ ${recipeData.time}</span>
           <span>👥 ${recipeData.servings}</span>
@@ -98,12 +112,7 @@ function openRecipeByCard(card) {
 
     modalBody.innerHTML = `
       <div class="recipe-hero">
-        <div class="modal-header-compact">
-          <h2>${recipeTitle}</h2>
-          <div class="modal-actions">
-            <button class="share-btn" id="shareBtn" onclick="copyShareLink('${slug}')">🔗 Share</button>
-          </div>
-        </div>
+        <h2>${recipeTitle}</h2>
         <div class="recipe-meta-bar">
           <span>${timeText}</span>
           <span>${servingsText}</span>
@@ -122,7 +131,8 @@ function openRecipeByCard(card) {
 
   history.replaceState(null, "", "#" + slug);
   modal.style.display = "block";
-  document.documentElement.style.overflow = "hidden";
+  modal.scrollTop = 0;
+  lockScroll();
 }
 
 recipeCards.forEach((card) => {
@@ -132,11 +142,11 @@ recipeCards.forEach((card) => {
 // ===== Close modal =====
 function closeModal() {
   modal.style.display = "none";
-  document.documentElement.style.overflow = "";
+  unlockScroll();
   history.replaceState(null, "", window.location.pathname);
 }
 
-closeBtn.onclick = closeModal;
+if (modalBackBtn) modalBackBtn.onclick = closeModal;
 window.onclick = (e) => { if (e.target === modal) closeModal(); };
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.style.display === "block") closeModal();
@@ -182,7 +192,7 @@ searchInput.addEventListener("input", (e) => {
   recipeCards.forEach((card) => {
     const title = fărăDiacritice(card.querySelector("h3").textContent);
     const description = fărăDiacritice(
-      card.querySelector(".recipe-description").textContent,
+      card.querySelector(".recipe-description")?.textContent || "",
     );
     if (title.includes(searchTerm) || description.includes(searchTerm)) {
       card.style.display = "block";
